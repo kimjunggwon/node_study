@@ -22,6 +22,6 @@ console.log('-----------------');
 console.log('path.isAbsolute(//): ', path.isAbsolute('//'));
 console.log('path.isAbsolute(./Users): ', path.isAbsolute('/Users'));
 console.log('-----------------');
-console.log('path.relative(): ', path.relative('//Users//gimjung-gwon//path.js'));
+console.log('path.relative(): ', path.relative('//Users//gimjung-gwon//path.js', '\\'));
 console.log('path.join(): ', path.join(__dirname, '..', '..', '/Users', '.', '/gimjung-gwon'));
 console.log('path.resolve(): ', path.resolve(__dirname, '..', 'Users', '.', '/gimjung-gwon'));
