@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 const session = require('express-session');
 const dotenv = require('dotenv');
 const path = require('path');
@@ -13,10 +14,12 @@ const app = express();
 app.set('port', process.env.PORT || 3000);
 //서버가 실행될 포트를 설정
 
-app.use(morgan('combined'));
+app.use(morgan('dev'));
 app.use('/', express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
+app.use(bodyParser.raw());
+app.use(bodyParser.text());
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(session({
     resave: false,
@@ -28,6 +31,9 @@ app.use(session({
     },
     name: 'session-cookie',
 }));
+
+const multer = require('multer');
+
 
 app.use((req, res, next) => {
 //next 매개변수 : 다음 미들웨어로 넘어가는 함수
