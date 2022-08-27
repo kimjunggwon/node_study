@@ -1,3 +1,2 @@
-sequelize/node_module/
-
-sequelize/config/config.js
+/sequelize/node_module/
+/sequelize/config/config.js
