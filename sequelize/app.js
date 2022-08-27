@@ -12,7 +12,7 @@ app.set('view engine', 'html');
 
 nunjuck.configure('views', {
     express: app,
-    watch: ture,
+    watch: true,
 });
 
 sequelize.sync({force: false})
@@ -22,6 +22,7 @@ sequelize.sync({force: false})
     .catch((err) => {
         console.error(err);
     });
+//db.sequelize를 불러와서 sync메서드를 사용하여 서버 실행 MySQL과 연동
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
