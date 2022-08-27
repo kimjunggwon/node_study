@@ -7,4 +7,4 @@ const db = {};
 const sequelize = new Sequelize(config.database, config.username, config.password, config);
 db.sequelize = db;
 
-module.exports = db;aa
+module.exports = db;
