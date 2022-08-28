@@ -26,7 +26,7 @@ module.exports = class User extends Sequelize.Model {
                 type: Sequelize.DATE,
                 allowNull: false,
                 defaultValue: Sequelize.NOW,
-            }
+            },
         },{
             sequelize,
             //static init 메서드의 매개변수와 연결되는 옵션
